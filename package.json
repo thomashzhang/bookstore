@@ -2,13 +2,14 @@
   "name": "bookstore",
   "version": "1.0.0",
   "description": "Simple bookstore app",
-  "main": "app.js",
+  "main": "app",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "express": "*",
+    "@types/express": "^4.0.35",
     "body-parser": "*",
+    "express": "^4.15.3",
     "mongoose": "*"
   },
   "author": "Thomas Zhang",
