@@ -1,4 +1,5 @@
 import * as mongoose from "mongoose"; 
+
 //Generate Schema
 const bookSchema = new mongoose.Schema({
     title: {
