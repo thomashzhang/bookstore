@@ -7,6 +7,7 @@ const Genre = require("./models/genres");
 const Book = require("./models/book");
 const app = express();
 app.use(bodyParser.json());
+app.use(express.static(__dirname + '/client'));
 const url = "mongodb://localhost";
 //Connect to Mongoose
 mongoose.connect(url + "/bookstore");

@@ -6,6 +6,7 @@ import * as Genre from "./models/genres"
 import * as Book from "./models/book"
 const app = express();
 app.use(bodyParser.json());
+app.use(express.static(__dirname + '/client'));
 const url: string = "mongodb://localhost";
 
 //Connect to Mongoose
