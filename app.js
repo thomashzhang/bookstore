@@ -8,7 +8,7 @@ const Book = require("./models/book");
 const app = express();
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/client'));
-const url = "mongodb://localhost";
+const url = process.env.MONGODB_URI || "mongodb://localhost";
 //Connect to Mongoose
 mongoose.connect(url + "/bookstore");
 const db = mongoose.connection;
@@ -108,5 +108,4 @@ function deleteBook(req, res) {
         res.json(book);
     });
 }
-app.listen(3000);
-console.log("Running on port 3000");
+app.listen(process.env.PORT || 3000);

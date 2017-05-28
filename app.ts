@@ -7,7 +7,7 @@ import * as Book from "./models/book"
 const app = express();
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/client'));
-const url: string = "mongodb://localhost";
+const url: string = process.env.MONGODB_URI || "mongodb://localhost";
 
 //Connect to Mongoose
 mongoose.connect(url + "/bookstore");
@@ -116,5 +116,4 @@ function deleteBook(req: any, res: any) {
     })
 }
 
-app.listen(3000);
-console.log("Running on port 3000");
+app.listen(process.env.PORT || 3000);
